@@ -1,23 +1,43 @@
-def spacefnc(x):
+def spacefunction(x):
     space = ''
-    for i in range (7-len(list(x))):
+    for i in range(7 - len(str(x))):
         space += ' '
     return space
-    
 
 
-a = input()
-b = input()
-c = input()
-d = input()
+floatlist = []
+spacelist = []
 
-space1 = spacefnc(a)
-space2 = spacefnc(b)
-space3 = spacefnc(c)
-space4 = spacefnc(d)
+for i in range(4):
+    y = '%.2f' % (round(float(input()), 2))
+    floatlist.append(y)
 
-print('|' + space1 + '%.2f' % float(a) + " " + space2 + '%.2f' % float(b) + '|')
-print('|' + space3 + '%.2f' % float(c) + " " + space4 + '%.2f' % float(d) + '|')
-print('|' + '%.2f' % float(a) + space1 + " " + '%.2f' % float(b) + space2 + '|')
-print('|' + '%.2f' % float(c) + space3 + " " + '%.2f' % float(d) + space4 + '|')
 
+for i in floatlist:
+    spacelist.append(spacefunction(i))
+
+print(floatlist)
+print(spacelist)
+
+
+print('|' + spacelist[0] + floatlist[0] + ' ' + spacelist[1] + floatlist[1] + '|')
+print('|' + spacelist[2] + floatlist[2] + ' ' + spacelist[3] + floatlist[3] + '|')
+print('|' + floatlist[0] + spacelist[0] + ' ' + floatlist[1] + spacelist[1] + '|')
+print('|' + floatlist[2] + spacelist[2] + ' ' + floatlist[3] + spacelist[3] + '|')
+
+
+
+# a = (round(float(input()), 2))
+# b = (round(float(input()), 2))
+# c = (round(float(input()), 2))
+# d = (round(float(input()), 2))
+
+# ans1 = spacefunction('%.2f' % (a))
+# ans2 = spacefunction('%.2f' % (b))
+# ans3 = spacefunction('%.2f' % (c))
+# ans4 = spacefunction('%.2f' % (d))
+
+# print('|' + ans1 + '%.2f' % (a) + ' ' + ans2 + '%.2f' % (b) + '|')
+# print('|' + ans3 + '%.2f' % (c) + ' ' + ans4 + '%.2f' % (d) + '|')
+# print('|' + '%.2f' % (a) + ans1 + ' ' + '%.2f' % (b) + ans2 + '|')
+# print('|' + '%.2f' % (c) + ans3 + ' ' + '%.2f' % (d) + ans4 + '|')
