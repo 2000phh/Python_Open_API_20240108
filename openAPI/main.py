@@ -14,6 +14,12 @@ def read_root():
     counter = redis_connect.incr('test:increment',1)
     return {"Counter": counter}
 
+#路徑參數
+@app.get("/counter/{c}")
+def counter(c:int):
+    counter = redis_connect.incr('test:increment',c)
+    return{"Counter":counter}
+
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q:str | None = None):
